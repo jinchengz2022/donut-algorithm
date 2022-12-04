@@ -1,5 +1,6 @@
 // 2022.12.04
 // brute force暴力解法
+// 时间复杂度：O(nlogn)，空间复杂度：O(1)
 export const getTwoSum1 = (nums: number[], target: number): number[] => {
   if (nums.length === 0) return nums;
   for (let i = 0; i <= nums.length; i++) {
@@ -12,7 +13,9 @@ export const getTwoSum1 = (nums: number[], target: number): number[] => {
   return [];
 }
 
+// 2022.12.04
 // 排序+双指针
+// 时间复杂度：O(n)，空间复杂度：O(1)
 export const getTwoSum2 = (nums: number[], target: number): number[] => {
   if (nums.length === 0) return nums;
   // 先从小到大排序
