@@ -30,12 +30,10 @@ var getThreeSum2 = function (nums, target) {
     var sortNums = nums.sort(function (a, b) { return a - b; });
     // 头尾指针
     // 先拿出第一个元素剩余元素双指针，第一个元素 + 双指针元素 === target
-    for (var i = 0; i <= sortNums.length; i++) {
+    for (var i = 0; i < sortNums.length - 2; i++) {
+        if (i > 0 && nums[i - 1] === nums[i])
+            continue;
         var start = i + 1, end = sortNums.length - 1, twoSumTarget = target - sortNums[i];
-        if (sortNums[i] > 0)
-            continue;
-        if (i > 0 && (sortNums[start + 1] + sortNums[end - 1] === twoSumTarget))
-            continue;
         while (start < end) {
             if (sortNums[start] + sortNums[end] === twoSumTarget) {
                 result.push([sortNums[i], sortNums[start], sortNums[end]]);
@@ -52,4 +50,4 @@ var getThreeSum2 = function (nums, target) {
     return result;
 };
 exports.getThreeSum2 = getThreeSum2;
-console.log((0, exports.getThreeSum2)([-4, -1, -1, 0, 1, 2]));
+console.log((0, exports.getThreeSum2)([-1, 0, 1, 2, -1, -4]));

@@ -37,3 +37,33 @@ export const getTwoSum2 = (nums: number[], target: number): number[] => {
 }
 
 console.log(getTwoSum2([2, 5, 9, 37, 0], 9));
+
+// no light
+// const getTwoSum = (nums: number[], target: number) => {
+//   if (nums.length < 2 || !nums) return nums;
+//   for (let i = 0; i < nums.length; i++) {
+//     for (let j = i + 1; j < nums.length; j++) {
+//       if (nums[i] + nums[j] === target) {
+//         return [i, j];
+//       }
+//     }
+//   }
+//   return nums;
+// }
+// const getTwoSum = (nums: number[], target: number) => {
+//   if (nums.length < 2 || !nums) return nums;
+//   const sortAry = nums.sort((a, b) => a - b);
+//   let left = 0, right = nums.length - 1;
+//   while(left < right) {
+//     if(sortAry[left] + sortAry[right] < target) {
+//       left++;
+//     }
+//     if(sortAry[left] + sortAry[right] < target) {
+//       right--;
+//     }
+//     if(sortAry[left] + sortAry[right] === target) {
+//       return[sortAry[left], sortAry[right]]
+//     }
+//   }
+//   return nums;
+// }

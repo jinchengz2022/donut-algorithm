@@ -24,11 +24,12 @@ export const getThreeSum2 = (nums: number[], target: number = 0): number[] => {
   const sortNums = nums.sort((a, b) => a - b);
   // 头尾指针
   // 先拿出第一个元素剩余元素双指针，第一个元素 + 双指针元素 === target
-  for (let i = 0; i <= sortNums.length; i++) {
+  for (let i = 0; i < sortNums.length - 2; i++) {
     let start = i + 1, end = sortNums.length - 1, twoSumTarget = target - sortNums[i];
     while (start < end) {
       if (sortNums[start] + sortNums[end] === twoSumTarget) {
-        return [sortNums[i], sortNums[start], sortNums[end]];
+        result.push([sortNums[i], sortNums[start], sortNums[end]]);
+        break;
       }
       if (sortNums[start] + sortNums[end] > twoSumTarget) {
         end--;
@@ -41,4 +42,24 @@ export const getThreeSum2 = (nums: number[], target: number = 0): number[] => {
   return result;
 }
 
-console.log(getThreeSum2([0, 5, 9, 37, 7, 4, 10], 11));
+console.log(getThreeSum2([-1, 0, 1, 2, -1, -4]));
+
+//no light
+// const getThreeSum = (nums: number[], target: number) => {
+//   if (nums.length < 3 || !nums) return nums;
+//   const sortAry = nums.sort((a, b) => a - b);
+//   for (let i = 0; i < sortAry.length; i++) {
+//     let left = i + 1, right = sortAry.length - 1, reTarget = target - sortAry[i];
+//     while (left < right) {
+//       if (sortAry[left] + sortAry[right] === reTarget) {
+//         return [sortAry[i], sortAry[left], sortAry[right]]
+//       }
+//       if (sortAry[left] + sortAry[right] < reTarget) {
+//         left++;
+//       }
+//       if (sortAry[left] + sortAry[right] > reTarget) {
+//         right--;
+//       }
+//     }
+//   }
+// }
