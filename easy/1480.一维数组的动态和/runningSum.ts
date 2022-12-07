@@ -6,3 +6,14 @@ export const runningSum = <T extends number[]>(nums: T): T => {
   }
   return result
 }
+
+// 2020.12.07
+// function runningSum(nums: number[]): number[] {
+//   const result: number[] = [];
+//   for(let i = 0; i < nums.length; i++) {
+//       result[i] = i === 0 ? nums[i] : (
+//           nums[i] + result[i - 1]
+//       )
+//   }
+//   return result;
+// };
