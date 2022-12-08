@@ -32,4 +32,18 @@ export const sumOddLengthSubarrays1 = (nums: number[]) => {
   return result;
 }
 
+// 2022.12.08
+// function sumOddLengthSubarrays(arr: number[]): number {
+//   if(arr.length === 0 || !arr) return 0;
+//   let result = 0;
+//   for(let i = 0; i < arr.length; i++) {
+//       for(let j = 1; i + j <= arr.length; j+=2) {
+//           for(let k = i; k < i + j; k++) {
+//               result = result + arr[k];
+//           }
+//       }
+//   }
+//   return result;
+// };
+
 console.log(sumOddLengthSubarrays1([1, 4, 2, 5, 3]));
