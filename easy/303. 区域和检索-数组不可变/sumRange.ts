@@ -32,4 +32,17 @@ export const sumRange = (nums: number[], left: number, right: number) => {
 //   }
 // }
 
+// 2022.12.11  review
+// class NumArray {
+//   public preFixSum = [0];
+//   constructor(nums: number[]) {
+//       for (let j = 0; j < nums.length; j++) {
+//           this.preFixSum[j + 1] = this.preFixSum[j] + nums[j];
+//       }
+//   }
+//   sumRange(left: number, right: number): number {
+//       return this.preFixSum[right + 1] - this.preFixSum[left];
+//   }
+// }
+
 console.log(sumRange([3, -1, 10, 23, 55, -12, -40], 3, 5));

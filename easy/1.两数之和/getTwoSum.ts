@@ -67,3 +67,33 @@ console.log(getTwoSum2([2, 5, 9, 37, 0], 9));
 //   }
 //   return nums;
 // }
+
+// 2022.12.11  review
+// function twoSum(nums: number[], target: number): number[] {
+//   if(!nums || nums.length === 0) return [];
+
+  // let left = 0;
+  // let right = nums.length - 1;
+
+  // while(left < right) {
+  //     const sum = nums[left] + nums[right];
+  //     if(sum === target) {
+  //         return [left, right]
+  //     }
+  //     if(sum > target) {
+  //         right--;
+  //     }
+  //     if(sum < target) {
+  //         left++;
+  //     }
+  // }
+//   for(let i = 0; i < nums.length; i++) {
+//       for(let j = i + 1; j < nums.length; j++) {
+//           const sum = nums[i] + nums[j];
+//           if(sum === target) {
+//               return [i, j];
+//           }
+//       }
+//   }
+//   return [];
+// };

@@ -34,4 +34,17 @@ export const reverseStringInAry2 = <T extends string[]>(strAry: T): T => {
   return strAry;
 }
 
+// 2022.12.11  review
+// function reverseString(s: string[]): void {
+//   let left = 0;
+//   let right = s.length - 1;
+
+//   while(left < right) {
+//       const [j, k] = [s[left], s[right]];
+//       s[left++] = k;
+//       s[right--] = j;
+
+//   }
+// };
+
 console.log(reverseStringInAry2(['h', 'e', 'l', 'r', 'o', 'i',]));
