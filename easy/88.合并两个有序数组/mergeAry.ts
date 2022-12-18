@@ -61,3 +61,49 @@ export const mergeAry = (nums1: number[], m: number, nums2: number[], n: number)
 
 console.log(mergeAry([1, 6, 8], 3, [3, 5, 9], 3));
 
+
+// 2022.12.11  review
+//  function merge(nums1: number[], m: number, nums2: number[], n: number): void {
+//   let index1 = 0;
+//   let index2 = 0;
+//   let resultIndex = 0;
+//   const result = Array(m + n);
+//   while (index1 < m && index2 < n) {
+//       if (nums1[index1] <= nums2[index2]) {
+//           result[resultIndex++] = nums1[index1++];
+//       } else {
+//           result[resultIndex++] = nums2[index2++];
+//       }
+//   }
+
+//   while (index1 < m) {
+//       result[resultIndex++] = nums1[index1++];
+//   }
+
+//   while (index2 < n) {
+//       result[resultIndex++] = nums2[index2++];
+//   }
+
+// while (index1 < m || index2 < n) {
+//   if (index1 < m && index2 < n) {
+//       if (nums1[index1] <= nums2[index2]) {
+//           result[resultIndex++] = nums1[index1++];
+//       } else {
+//           result[resultIndex++] = nums2[index2++];
+//       }
+//       continue;
+//   }
+//   if (index1 < m) {
+//       result[resultIndex++] = nums1[index1++];
+//       continue;
+//   }
+//   if (index2 < n) {
+//       result[resultIndex++] = nums2[index2++];
+//       continue;
+//   }
+// }
+
+//   for(let i = 0; i < m + n; i++) {
+//       nums1[i] = result[i];
+//   }
+// };

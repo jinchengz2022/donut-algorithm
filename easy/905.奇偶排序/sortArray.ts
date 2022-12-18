@@ -57,4 +57,28 @@ function sortArrayByParity(nums: number[]): number[] {
   return nums;
 };
 
+// 2022.12.11  review
+// function sortArrayByParity(nums: number[]): number[] {
+//   if(!nums || nums.length === 0) return [];
+//   let left = 0;
+//   let right = nums.length - 1;
+
+//   while(left < right) {
+//       if(nums[left] % 2 !== 0 && nums[right] % 2 === 0) {
+//           const [j, k] = [nums[left], nums[right]];
+//           nums[left++] = k;
+//           nums[right--] = j;
+//       }
+
+//       if(nums[left] % 2 === 0) {
+//           left++;
+//       }
+
+//       if(nums[right] % 2 !== 0) {
+//           right--;
+//       }
+//   }
+//   return nums;
+// };
+
 console.log(sortAry2([1,2,33,6,7,23,9]));
