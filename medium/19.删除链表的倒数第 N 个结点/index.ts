@@ -21,3 +21,26 @@ function removeNthFromEnd(head: ListNode | null, n: number): ListNode | null {
 
   return dummyNode.next;
 };
+
+// 2023.01.03
+// function removeNthFromEnd(head: ListNode | null, n: number): ListNode | null {
+//   if(head === null) return null;
+
+//   const dummyNode = new ListNode(-1);
+//   dummyNode.next = head;
+//   // 注意slow的开始位置
+//   let fast = head, slow = dummyNode;
+
+//   for(let i = 0; i < n; i++) {
+//       fast = fast.next;
+//   }
+
+//   while(fast !== null) {
+//       fast = fast.next;
+//       slow = slow.next;
+//   }
+
+//   slow.next = slow.next.next;
+
+//   return dummyNode.next;
+// };

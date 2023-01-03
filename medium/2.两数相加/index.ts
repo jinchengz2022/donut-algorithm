@@ -68,3 +68,37 @@ function addTwoNumbers(l1: ListNode | null, l2: ListNode | null): ListNode | nul
 
   return dummyNode.next;
 };
+
+// 2023.01.03
+// function addTwoNumbers(l1: ListNode | null, l2: ListNode | null): ListNode | null {
+//   if (l1 === null && l2 === null) return null;
+
+//   const dummyNode = new ListNode(-1);
+//   // 新增链表
+//   let node = dummyNode;
+
+//   let carry = 0;
+
+//   while (l1 !== null || l2 !== null || carry !== 0) {
+//       const num1 = l1 === null ? 0 : l1.val;
+//       const num2 = l2 === null ? 0 : l2.val;
+//       const sum = num1 + num2 + carry;
+//       const value = sum % 10;
+//       carry = Math.floor(sum / 10);
+
+//       const valueNode = new ListNode(value);
+//       node.next = valueNode;
+//       // 记得指针移位
+//       node = node.next;
+
+//       if (l1 !== null) {
+//           l1 = l1.next;
+
+//       }
+//       if (l2 !== null) {
+//           l2 = l2.next;
+//       }
+//   }
+
+//   return dummyNode.next;
+// };
