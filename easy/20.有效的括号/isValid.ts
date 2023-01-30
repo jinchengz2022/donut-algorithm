@@ -21,3 +21,28 @@ function isValid(s: string): boolean {
 
   return stack.length === 0;
 };
+
+export const isValid2 = (str: string): boolean => {
+    if(!str || str.length % 2 !== 0) return false;
+
+    const strEnum = {
+        '[': ']',
+        '{': '}',
+        '(': ')',
+    }
+    const strStack = [];
+
+    for(let i = 0; i < str.length; i++) {
+        if(['[', '{' ,'('].includes(str[i])) {
+            strStack.push(str[i]);
+        } else {
+            if(strStack.length === 0) return false;
+
+            if(strEnum[strStack.pop()] !== str[i]) return false;
+        }
+    }
+
+    return strStack.length === 0;
+}
+
+console.log(isValid('({})'))

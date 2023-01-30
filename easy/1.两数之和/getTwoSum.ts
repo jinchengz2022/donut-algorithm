@@ -36,7 +36,6 @@ export const getTwoSum2 = (nums: number[], target: number): number[] => {
   return [];
 }
 
-console.log(getTwoSum2([2, 5, 9, 37, 0], 9));
 
 // no light
 // const getTwoSum = (nums: number[], target: number) => {
@@ -97,3 +96,26 @@ console.log(getTwoSum2([2, 5, 9, 37, 0], 9));
 //   }
 //   return [];
 // };
+
+export const getTwoSum3 = (nums: number[], target: number) => {
+  if(nums.length === 0 || !nums) return [];
+
+  // const numsMap = new Map(nums.map((k, v) => [k, v]));
+
+  for(let i = 0; i < nums.length - 1; i++) {
+
+    // if(numsMap.get(target - nums[i])) {
+    //   return [i, numsMap.get(target - nums[i])]
+    // }
+
+    for(let j = i + 1; j < nums.length; j++) {
+      if(nums[i] + nums[j] === target) {
+        return [i, j]
+      }
+    }
+  }
+  
+  return [];
+}
+
+console.log(getTwoSum2([2, 5, 9, 37, 0], 9));
