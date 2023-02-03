@@ -55,3 +55,29 @@ function largestRectangleArea(heights: number[]): number {
   return result;
 
 };
+
+// 2023.2.3 review
+export function largestRectangleArea2(heights: number[]): number {
+  if(heights.length === 0 || !heights) return -1;
+
+  const minRightStack: number[] = new Array(heights.length).fill(heights.length);
+  const minLeftStack: number[] = new Array(heights.length).fill(-1);
+  const stack: number[] = [];
+
+  for(let j = 0; j < heights.length; j++) {
+      while(stack.length !== 0 && heights[stack[stack.length - 1]] > heights[j]) {
+          minRightStack[stack.pop()] = j;
+      }
+      minLeftStack[j] = stack.length === 0 ? -1 : stack[stack.length - 1];
+      stack.push(j);
+  }
+
+  let result = 0;
+
+  for(let k = 0; k < heights.length; k++) {
+      result = Math.max(result, (minRightStack[k] - minLeftStack[k] - 1) * heights[k]);
+  }
+
+  return result;
+
+};
