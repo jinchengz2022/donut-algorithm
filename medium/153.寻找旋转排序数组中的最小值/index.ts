@@ -1,4 +1,4 @@
-function findMin(nums: number[]): number {
+export function findMin(nums: number[]): number {
   if(!nums || nums.length === 0) return -1;
 
   let left = 0, right = nums.length - 1;
@@ -18,4 +18,29 @@ function findMin(nums: number[]): number {
   }
 
   return Math.min(nums[left], nums[right]);
+};
+
+export function findMin1(nums: number[]): number {
+  if(!nums || nums.length === 0) {
+      return -1;
+  }
+
+  let left = 0, right = nums.length - 1;
+
+  while(left + 1 < right) {
+      const mid = Math.floor((left + right) / 2);
+
+      if(nums[left] < nums[right]) {
+          return nums[left];
+      }
+      if(nums[mid] > nums[left]) {
+          left = mid;
+      }
+      if(nums[mid] < nums[right]) {
+          right = mid;
+      }
+  }
+
+  return Math.min(nums[left], nums[right]);
+
 };
