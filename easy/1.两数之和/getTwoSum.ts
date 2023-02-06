@@ -118,4 +118,21 @@ export const getTwoSum3 = (nums: number[], target: number) => {
   return [];
 }
 
+export function twoSum4(nums: number[], target: number): number[] {
+  if(!nums || nums.length === 0) {
+      return [];
+  }
+
+  const indexMap = new Map(nums.map((k, v) => [k ,v]));
+
+  for(let i = 0; i < nums.length; i++) {
+      const getValue = indexMap.get(target - nums[i]);
+      if(getValue && getValue !== i) {
+          return [i, getValue];
+      }
+  }
+
+  return [];
+};
+
 console.log(getTwoSum2([2, 5, 9, 37, 0], 9));
